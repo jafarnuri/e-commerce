@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+.container {
+  padding: 8px 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+.product__image {
+  height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+.product__image:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.product__image--box {
+  height: 200px;
+  position: relative;
+}
+
+.product__image--box > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.product__description {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px;
+}
+
+.product__description--rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__description--title h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: -webkit-box; /* Use flexbox for truncation */
+  -webkit-line-clamp: 2; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Vertical box orientation */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipses when truncated */
+  line-height: 1.5; /* Adjust line height for better readability */
+  max-height: calc(
+    1.5em * 2
+  ); /* Calculate max height based on the number of lines */
+}
+
+.product__description--title p {
+  display: -webkit-box; /* Use flexbox for truncation */
+  -webkit-line-clamp: 2; /* Limit to 3 lines */
+  -webkit-box-orient: vertical; /* Vertical box orientation */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipses when truncated */
+  line-height: 1.5; /* Adjust line height for better readability */
+  max-height: calc(
+    1.5em * 3
+  ); /* Calculate max height based on the number of lines */
+}
+
+.product__description--price {
+  display: flex;
+  justify-content: end;
+}
+
+.product__description--price b {
+  display: 18px;
+}
+
+.basket {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
